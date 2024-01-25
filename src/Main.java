@@ -1,15 +1,22 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        zlomky zlomekA = new zlomky(8, 4);
+        zlomky zlomekB = new zlomky(1, 4);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println("První číslo: " + zlomekA + "\nCelé číslo: " + zlomekA.prevodNaCeleCislo());
+        System.out.println(" ");
+        System.out.println("Druhé číslo: " + zlomekB + "\nCelé číslo: " + zlomekB.prevodNaCeleCislo());
+        System.out.println(" ");
+        zlomky scitani = zlomekA.add(zlomekB);
+        System.out.println("Sčítání: " + scitani + "\nCelé číslo: " + scitani.prevodNaCeleCislo());
+        System.out.println(" ");
+        zlomky odecitani = zlomekA.subtract(zlomekB);
+        System.out.println("Odečítání: " + odecitani + "\nCelé číslo: " + odecitani.prevodNaCeleCislo());
+        System.out.println(" ");
+        zlomky nasobeni = zlomekA.multiply(zlomekB);
+        System.out.println("Násobení: " + nasobeni + "\nCelé číslo: " + nasobeni.prevodNaCeleCislo());
+        System.out.println(" ");
+        zlomky deleni = zlomekA.divide(zlomekB);
+        System.out.println("Dělení: " + deleni + "\nCelé číslo: " + deleni.prevodNaCeleCislo());
     }
 }

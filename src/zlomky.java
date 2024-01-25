@@ -1,8 +1,8 @@
-public class Fraction {
+public class zlomky {
     private final int citatel;
     private final int jmenovatel;
 
-    public Fraction(int citatel, int jmenovatel) {
+    public zlomky(int citatel, int jmenovatel) {
         if (jmenovatel == 0) {
             throw new IllegalArgumentException("Jmenovatel se nemuze rovnat nule");
         }
@@ -15,38 +15,38 @@ public class Fraction {
         this.jmenovatel = jmenovatel / kombinaceZlomek;
     }
 
-    public Fraction add(Fraction other) {
+    public zlomky add(zlomky other) {
         int newCitatel = this.citatel * other.jmenovatel + other.citatel * this.jmenovatel;
         int newJmenovatel = this.jmenovatel * other.jmenovatel;
-        return new Fraction(newCitatel, newJmenovatel);
+        return new zlomky(newCitatel, newJmenovatel);
     }
 
-    public Fraction subtract(Fraction other) {
+    public zlomky subtract(zlomky other) {
         int newCitatel = this.citatel * other.jmenovatel - other.citatel * this.jmenovatel;
         int newJmenovatel = this.jmenovatel * other.jmenovatel;
-        return new Fraction(newCitatel, newJmenovatel);
+        return new zlomky(newCitatel, newJmenovatel);
     }
 
-    public Fraction multiply(Fraction other) {
+    public zlomky multiply(zlomky other) {
         int newCitatel = this.citatel * other.citatel;
         int newJmenovatel = this.jmenovatel * other.jmenovatel;
-        return new Fraction(newCitatel, newJmenovatel);
+        return new zlomky(newCitatel, newJmenovatel);
     }
 
-    public Fraction divide(Fraction other) {
+    public zlomky divide(zlomky other) {
         if (other.citatel == 0) {
             throw new ArithmeticException("Division by zero");
         }
-        int newNumerator = this.citatel * other.jmenovatel;
-        int newDenominator = this.jmenovatel * other.citatel;
-        return new Fraction(newNumerator, newDenominator);
+        int newCitatel = this.citatel * other.jmenovatel;
+        int newJmenovatel = this.jmenovatel * other.citatel;
+        return new zlomky(newCitatel, newJmenovatel);
     }
 
-    public Fraction reciprocal() {
-        return new Fraction(this.jmenovatel, this.citatel);
+    public zlomky reciprocal() {
+        return new zlomky(this.jmenovatel, this.citatel);
     }
 
-    public double toReal() {
+    public double prevodNaCeleCislo() {
         return (double) citatel / jmenovatel;
     }
 
